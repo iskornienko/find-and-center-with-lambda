@@ -35,14 +35,15 @@ rm lambda_function.py
 mv find-and-center-with-lambda/lambda_function.py .
 ```
 
-Prepare S3 Bucket
-1. Create S3 bucket
-1. Create folders input_images, output_images, and model
-1. Download http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz, unzip it, and upload frozen_inference_graph.pb in to the model folder on s3
-1. Go back to the lambda console and open the function you created
-1. In the 'designer' section, select S3, and scroll down to the Configure trigger section
-1. Select the bucket you created in step 1
-1. Leave the Event type as object created
-1. For the Prefix enter 'input_images'
-1. for the Suffic enter 'jpeg'
-1. Click Add and then Save in the top right
+### Prepare S3 Bucket
+1. Create a new S3 bucket
+2. Create folders input_images, output_images, and model in the bucket
+3. Download http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2017_11_17.tar.gz, unzip it, and upload frozen_inference_graph.pb in to the model folder on s3
+4. Go back to the Lambda console and open the function you created
+5. In the 'Designer' section, select S3, and scroll down to the Configure trigger section
+6. Select the bucket you created in step 1
+7. Leave the Event type as object created
+8. For the Prefix enter 'input_images'
+9. for the Suffic enter 'jpeg'
+10. Click Add and then Save in the top right
+11. Replace 'mlstuff7631' in lambda_function.py with the name of your S3 bucket

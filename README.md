@@ -13,6 +13,7 @@ cd vendor
 5. Pull in version 1.4 of Tensorflow for Object Detection and Pillow for image manipulation
 ```
 pip install --upgrade --ignore-installed --no-cache-dir https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.0-cp27-none-linux_x86_64.whl -t .
+touch google/__init__.py
 pip install Pillow -t .
 ```
 6. Delete libraries that Tensorflow does not need. This is necessary due to size restrictions imposed on Lambda functions by AWS.

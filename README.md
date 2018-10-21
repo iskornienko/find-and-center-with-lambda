@@ -1,7 +1,8 @@
-# find-and-center-with-lambda
-Object detection and image processing with AWS Lambda
+# Object detection and image processing with AWS Lambda
+This example illustrates how object detection and image manipulation can be done using Python on AWS Lambda. The code take an image, uses Tensorflow to detect any humans, and crops the image so that the human is in the middle of the picture.
 
 ![Sample Image](https://github.com/iskornienko/find-and-center-with-lambda/blob/master/sample_image.png?raw=true)
+
 
 ### Prepare Lambda Function
 1. Go to the AWS Lambda console and create a new Lambda function

@@ -9,7 +9,7 @@ import boto3
 
 #pull in the vendored directory because it will contain all the third party libraries
 HERE = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(HERE, "vendored"))
+sys.path.append(os.path.join(HERE, "vendor"))
 
 #pull in the third party libraries needed for this example
 from PIL import Image

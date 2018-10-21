@@ -1,16 +1,21 @@
 # find-and-center-with-lambda
 Object detection and image processing with AWS Lambda
 
-Prepare Lambda Function
-1. Go to the lambda console and create a new lambda function
-1. Set the memory to 3gig and timeout to 1min
-1. Pull in the lambda function locally or use Cloud9 to edit it (my preferred method)
-1. Create a directory that will store all the third party libraries and go in to it
+### Prepare Lambda Function
+1. Go to the AWS Lambda console and create a new Lambda function
+2. Set the memory of the Lambda function to 3gig and timeout to 1min
+3. Pull in the lambda function code locally or use Cloud9 to edit it (my preference due to the various helper features)
+4. Create a directory that will store the various third party libraries and step in to it
+```
 mkdir vendor
 cd vendor
-1. pull in version 1.4 of tensor flow
+```
+5. Pull in version 1.4 of Tensorflow
+```
 pip install --upgrade --ignore-installed --no-cache-dir https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.4.0-cp27-none-linux_x86_64.whl -t .
-1. delete all the unnecessary tensor flow data 
+```
+6. Delete libraries that Tensorflow does not need. This is necessary due to size restrictions imposed on Lambda functions by AWS.
+```
 rm -r bleach
 rm -r concurrent
 rm -r external
@@ -20,7 +25,8 @@ rm -r werkzeug
 rm -r tensorboard
 find . -name "*.so" | xargs strip
 find . -type f -name "*.pyc" -delete
-1. replace lambda_function.py with the lamb_function.py from this github repo
+```
+7. Copy the object_detection folder in to your project & replace lambda_function.py with the lambda_function.py from this repo
 ```
 cd ..
 git clone https://github.com/iskornienko/find-and-center-with-lambda.git
@@ -28,7 +34,6 @@ mv find-and-center-with-lambda/vendor/object_detection vendor/
 rm lambda_function.py 
 mv find-and-center-with-lambda/lambda_function.py .
 ```
-1. copy the object_detection folder in to the vendor directory
 
 Prepare S3 Bucket
 1. Create S3 bucket

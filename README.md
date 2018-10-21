@@ -1,6 +1,8 @@
 # find-and-center-with-lambda
 Object detection and image processing with AWS Lambda
 
+![Sample Image](https://github.com/iskornienko/find-and-center-with-lambda/blob/master/sample_image.png?raw=true)
+
 ### Prepare Lambda Function
 1. Go to the AWS Lambda console and create a new Lambda function
 2. Set the memory of the Lambda function to 3gig and timeout to 1min

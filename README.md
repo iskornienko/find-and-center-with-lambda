@@ -21,9 +21,13 @@ rm -r tensorboard
 find . -name "*.so" | xargs strip
 find . -type f -name "*.pyc" -delete
 1. replace lambda_function.py with the lamb_function.py from this github repo
+```
 cd ..
-git pull ...
-cp file to file
+git clone https://github.com/iskornienko/find-and-center-with-lambda.git
+mv find-and-center-with-lambda/vendor/object_detection vendor/
+rm lambda_function.py 
+mv find-and-center-with-lambda/lambda_function.py .
+```
 1. copy the object_detection folder in to the vendor directory
 
 Prepare S3 Bucket
